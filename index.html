@@ -15,7 +15,12 @@
 <div id='map'></div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibHVrYXMtaG9ybmJ5IiwiYSI6ImNqMjBqOHRsMDAwMnUzM242dWFpcGliMmcifQ.fxHuGlp_LxTl4K0ozSkXiw';
-var map = L.mapbox.map('map', 'mapbox.streets')
+var map = L.mapbox.map('map', 'mapbox.streets', {
+    style: 'mapbox://styles/lukas-hornby/cj21ycq5s006z2sl5iqwi6o8g'
+    scrollWheelZoom: false,
+  maxZoom: 30,
+  minZoom: 10
+})
     .setView([53.79,-1.75], 13);
 </script>
 </body>
