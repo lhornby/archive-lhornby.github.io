@@ -32,6 +32,14 @@ var map = new mapboxgl.Map({
     zoom: 13 // starting zoom
 });
     
+
+function flyToStore(currentFeature) {
+  map.flyTo({
+    center: currentFeature.geometry.coordinates,
+    zoom: 15
+  });
+}
+    
 //Pop-up event listener and styling
 function createPopUp(currentFeature) {
   var popUps = document.getElementsByClassName('mapboxgl-popup');
