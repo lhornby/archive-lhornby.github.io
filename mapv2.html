@@ -40,7 +40,7 @@ function createPopUp(currentFeature) {
 
   var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>Sweetgreen</h3>' +
+    .setHTML('<h3>Sound Recording/h3>' +
       '<h4>' + currentFeature.properties.address + '</h4>')
     .addTo(map);
 }
@@ -48,7 +48,7 @@ function createPopUp(currentFeature) {
     // Add an event listener for when a user clicks on the map
 map.on('click', function(e) {
   // Query all the rendered points in the view
-  var features = map.queryRenderedFeatures(e.point, { layers: ['locations'] });
+  var features = map.queryRenderedFeatures(e.point, { layers: ['test'] });
   if (features.length) {
     var clickedPoint = features[0];
     // 1. Fly to the point
