@@ -86,6 +86,9 @@ map.on('click', function(e) {
     listing.classList.add('active');
   }
 });
+    
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl());    
 </script>
 
 </body>
