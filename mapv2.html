@@ -48,12 +48,10 @@ function createPopUp(currentFeature) {
 
   var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>Sound Recording</h3>' +
-      '<h4><a href="' + currentFeature.properties.audioLink + '">Soundcloud Link</a></h4>'+
+    .setHTML('<h3>' currentFeature.properties.location +' - ' + currentFeature.properties.time +' - ' +currentFeature.properties.author +'</h3>' +
+      '<h4><a href="' + currentFeature.properties.audioLink + ' target=''_blank'' ">Click to Play</a></h4>'+
             '<p>' + currentFeature.properties.desc +'<p>' +
-            '<p>' + currentFeature.properties.equipUsed +'<p>' +
-            '<p>' + currentFeature.properties.monoStereo +'<p>' +
-            '<p>' + currentFeature.properties.time +'<p>' 
+            '<p>' +'<strong>Equipment: </strong>' + currentFeature.properties.equipUsed +'<strong>Channel(s): </strong>' +           currentFeature.properties.monoStereo +'<p>'
             )
     .addTo(map);
 }
