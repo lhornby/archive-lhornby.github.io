@@ -48,7 +48,12 @@ function createPopUp(currentFeature) {
 
   var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat(currentFeature.geometry.coordinates)
-    .setHTML('<h3>' +currentFeature.properties.Location +' - ' + currentFeature.properties.time +' - ' +currentFeature.properties.author +'</h3>' +'<h4><a href="' + currentFeature.properties.audioLink + ' target=\'_blank\' ">Click to Play</a></h4>' + '<iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320803595&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>' +'<p>' + currentFeature.properties.desc +'</p>' + '<p>' +'<strong>Duration (mm:ss): </strong>' + currentFeature.properties.duration +'<strong>' ).addTo(map);
+    .setHTML('<h3>' +currentFeature.properties.Location +' - ' + currentFeature.properties.time +' - ' +currentFeature.properties.author +'</h3>' 
+             //+'<h4><a href="' 
+             //+ currentFeature.properties.audioLink + '" target=\'_blank\' ">Click to Play</a></h4>' 
+             //+ '<iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320803595&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>' 
+             +'<p> <audio controls><source src="https://en.wikipedia.org/wiki/File:Trudeau_sleeping_with_an_elephant.ogg" type audio/ogg">Sorry, your browser does not support this audio player</audio>
+             +'<p>' + currentFeature.properties.desc +'</p>' + '<p>' +'<strong>Duration (mm:ss): </strong>' + currentFeature.properties.duration +'<strong>' ).addTo(map);
 }
 
     // Add an event listener for when a user clicks on the map
