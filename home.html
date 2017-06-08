@@ -25,7 +25,7 @@
     <!-- Full width mapbox map -->
     <div class="map"></div>
     <!-- Map script -->
-    <script>
+        <script>
         // This will let you use the .remove() function later on
           if (!('remove' in Element.prototype)) {
             Element.prototype.remove = function() {
@@ -35,11 +35,11 @@
             };
           }
 
-        mapboxgl.accessToken =      'pk.eyJ1IjoibHVrYXMtaG9ybmJ5IiwiYSI6ImNqMjBqOHRsMDAwMnUzM242dWFpcGliMmcifQ.fxHuGlp_LxTl4K0ozSkXiw';
+        mapboxgl.accessToken = 'pk.eyJ1IjoibHVrYXMtaG9ybmJ5IiwiYSI6ImNqMjBqOHRsMDAwMnUzM242dWFpcGliMmcifQ.fxHuGlp_LxTl4K0ozSkXiw';
         var map = new mapboxgl.Map({
             container: 'map', // container id
             center: [-1.7555017, 53.7924236], // starting position
-            style: 'mapbox://styles/lukas-hornby/cj21ycq5s006z2sl5iqwi6o8g', //hosted style id
+            style: 'mapbox://styles/lukas-hornby/cj2khw237001o2rnzjtk612vv', //hosted style id
             zoom: 13 // starting zoom
         });
 
@@ -59,7 +59,12 @@
 
           var popup = new mapboxgl.Popup({ closeOnClick: false })
             .setLngLat(currentFeature.geometry.coordinates)
-            .setHTML('<h3>' +currentFeature.properties.Location +' - ' + currentFeature.properties.time +' - ' +currentFeature.properties.author +'</h3>' +'<h4><a href="' + currentFeature.properties.audioLink + ' target=\'_blank\' ">Click to Play</a></h4>' + '<iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320803595&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>' +'<p>' + currentFeature.properties.desc +'</p>' + '<p>' +'<strong>Duration (mm:ss): </strong>' + currentFeature.properties.duration +'<strong>' ).addTo(map);
+            .setHTML('<h3>' +currentFeature.properties.Location +' - ' + currentFeature.properties.time +' - ' +currentFeature.properties.author +'</h3>' 
+                     //+'<h4><a href="' 
+                     //+ currentFeature.properties.audioLink + '" target=\'_blank\' ">Click to Play</a></h4>' 
+                     //+ '<iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320803595&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>' 
+                     +'<p> <audio controls autoplay loop><source src="https://archive.org/download/AbdulAzizSurahFateha/MaulaYaSalliWaSallimFull.ogg" type="audio/ogg"><source src="https://archive.org/download/AbdulAzizSurahFateha/MaulaYaSalliWaSallimFull.mp3" type="audio/mp3">Sorry, your browser does not support this audio player</audio> </p>'
+                     +'<p>' + currentFeature.properties.desc +'</p>' + '<p>' +'<strong>Duration (mm:ss): </strong>' + currentFeature.properties.duration +'<strong>' ).addTo(map);
         }
 
             // Add an event listener for when a user clicks on the map
@@ -94,6 +99,7 @@
         // Add zoom and rotation controls to the map.
         map.addControl(new mapboxgl.NavigationControl());    
         </script>
+
         <script src="js/vendor/jquery.js"></script>
         <script src="js/vendor/what-input.js"></script>
         <script src="js/vendor/foundation.js"></script>
