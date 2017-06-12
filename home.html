@@ -16,13 +16,30 @@
     
   </head>
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <h3>Bradford Sound Map</h3>
-      </div>
-    </div>
-    <!-- Full width mapbox map -->
-    <div id='map'></div>
+    <!-- MAIN CONTENT -->
+    <section class="top-bar">
+        <div class="top-bar-left">
+            <h3>Bradford Sound Map</h3>
+        </div>
+        <div class="top-bar-right">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li>
+                  <a href="#">One</a>
+                  <ul class="menu vertical">
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+            </ul>
+    </section>
+    <!-- FULL WIDTH MAP SECTION -->
+    <section id='map'></section>
+    <!-- FOOTER -->
+    <footer></footer>
+        
     <!-- Map script -->
         <script>
         // This will let you use the .remove() function later on
