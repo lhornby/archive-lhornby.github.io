@@ -11,85 +11,90 @@
   <body>
     <!-- MAIN CONTENT -->
     <section class="top-bar">
-        <div class="top-bar-left">
-            <h3>Bradford Sound Map</h3>
+        <div class="wrap">
+            <div class="top-bar-left">
+                <h3>Bradford Sound Map</h3>
+            </div>
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                      <a href="about.html">About</a>
+                       <ul class="menu vertical">
+                        <li><a href="about.html#part">Participants</a></li>
+                        <li><a href="about.html#loc">Locations</a></li>
+                        <li><a href="about.html#cat">Categories</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="top-bar-right">
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li>
-                    <a href="home.html">Home</a>
-                </li>
-                <li>
-                  <a href="about.html">About</a>
-                   <ul class="menu vertical">
-                    <li><a href="about.html#part">Participants</a></li>
-                    <li><a href="about.html#loc">Locations</a></li>
-                    <li><a href="about.html#cat">Categories</a></li>
-                  </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
     </section>
         
     <!-- CONTACT FORM -->
     <section class="contact">
-        <form data-abide novalidate>
-              <div class="row"><h2>CONTACT FORM</h2></div>
-              <div data-abide-error class="alert callout" style="display: none;">
-                <p><i class="fi-alert"></i> There are some errors in your form.</p>
-              </div>
-              <div class="row">
-                <div class="small-12 columns">
-                  <label>Name
-                    <input type="text" placeholder="Jane Smith" aria-describedby="exampleHelpText" required pattern="alpha_numeric">
-                    <span class="form-error">
-                      Yo, you had better fill this out, it's required.
-                    </span>
-                  </label>
-                </div>
-                <div class="small-12 columns">
-                  <label>Email
-                    <input type="email" id="email" placeholder="name@email.com" aria-describedby="exampleHelpText" required pattern="email">
-                    <span class="form-error">
-                      I'm required!
-                    </span>
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="small-12 columns">
-                  <label>Subject
-                    <select id="select" required>
-                      <option value=""></option>
-                      <option value="particaption request">I want to participate</option>
-                      <option value="submission">I have a submission</option>
-                      <option value="feedback">I have some feedback</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="small-12 columns">
-                  <label>Message
-                    <textarea rows="5" cols="50" id="message" placeholder="Please give us some more details" aria-describedby="exampleHelpText" required ></textarea> 
-                    <span class="form-error">I'm required!</span>
-                  </label>
-                      <p class="help-text" id="exampleHelpText">Please enter some text here</p>
-                </div>
-              </div>
-              <div class="row">
-                <fieldset class="large-6 columns">
-                  <button class="alert button" type="reset" value="Reset">Reset</button>
-                </fieldset>
-                <fieldset class="large-6 columns">
-                  <button class="success button" type="submit" value="Reset">Send</button>
-                </fieldset>
-              </div>
-            </form>
+        <div class ="wrap">
+            <form data-abide novalidate>
+                  <div class="row"><h2>CONTACT FORM</h2></div>
+                  <div data-abide-error class="alert callout" style="display: none;">
+                    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <label>Name
+                        <input type="text" placeholder="Jane Smith" aria-describedby="exampleHelpText" required pattern="alpha_numeric">
+                        <span class="form-error">
+                          Yo, you had better fill this out, it's required.
+                        </span>
+                      </label>
+                    </div>
+                    <div class="small-12 columns">
+                      <label>Email
+                        <input type="email" id="email" placeholder="name@email.com" aria-describedby="exampleHelpText" required pattern="email">
+                        <span class="form-error">
+                          I'm required!
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <label>Subject
+                        <select id="select" required>
+                          <option value=""></option>
+                          <option value="particaption request">I want to participate</option>
+                          <option value="submission">I have a submission</option>
+                          <option value="feedback">I have some feedback</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <label>Message
+                        <textarea rows="5" cols="50" id="message" placeholder="Please give us some more details" aria-describedby="exampleHelpText" required ></textarea> 
+                        <span class="form-error">I'm required!</span>
+                      </label>
+                          <p class="help-text" id="exampleHelpText">Please enter some text here</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <fieldset class="large-6 columns">
+                      <button class="alert button" type="reset" value="Reset">Reset</button>
+                    </fieldset>
+                    <fieldset class="large-6 columns">
+                      <button class="success button" type="submit" value="Reset">Send</button>
+                    </fieldset>
+                  </div>
+                </form>
+            </div>
     </section>    
     <!-- FOOTER -->
-    <footer></footer>
+    <footer><div class ="wrap"></div></footer>
         
     <!-- FOUNDATION REQUIRED SCRIPTS -->    
     <script src="js/vendor/jquery.js"></script>
