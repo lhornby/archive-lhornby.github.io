@@ -28,7 +28,7 @@
                   </ul>
                 </li>
                 <li><a href="#">Two</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
     </section>
     <!-- CONTACT FORM -->
@@ -40,21 +40,19 @@
               <div class="row">
                 <div class="small-12 columns">
                   <label>Name
-                    <input type="text" placeholder="Jane Smith" aria-describedby="exampleHelpText" required pattern="number">
+                    <input type="text" placeholder="Jane Smith" aria-describedby="exampleHelpText" required pattern="alpha_numeric">
                     <span class="form-error">
                       Yo, you had better fill this out, it's required.
                     </span>
                   </label>
-                  <p class="help-text" id="exampleHelpText">Here's how you use this input field!</p>
                 </div>
                 <div class="small-12 columns">
                   <label>Email
-                    <input type="text" id="password" placeholder="name@email.com" aria-describedby="exampleHelpText" required >
+                    <input type="email" id="email" placeholder="name@email.com" aria-describedby="exampleHelpText" required pattern="email">
                     <span class="form-error">
                       I'm required!
                     </span>
                   </label>
-                  <p class="help-text" id="exampleHelpText">Enter a password please.</p>
                 </div>
               </div>
               <div class="row">
@@ -62,10 +60,10 @@
                   <label>Subject
                     <select id="select" required>
                       <option value=""></option>
-                      <option value="volvo">I want to participate</option>
-                      <option value="saab">I have a submission</option>
-                      <option value="mercedes">I have some feedback</option>
-                      <option value="audi">Other</option>
+                      <option value="particaption request">I want to participate</option>
+                      <option value="submission">I have a submission</option>
+                      <option value="feedback">I have some feedback</option>
+                      <option value="other">Other</option>
                     </select>
                   </label>
                 </div>
@@ -73,7 +71,7 @@
               <div class="row">
                 <div class="small-12 columns">
                   <label>Message
-                    <input type="text" id="password" placeholder="Please give us some more details" aria-describedby="exampleHelpText" required >
+                    <textarea rows="5" cols="50" id="message" placeholder="Please give us some more details" aria-describedby="exampleHelpText" required >
                     <span class="form-error">
                       I'm required!
                     </span>
