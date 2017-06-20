@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>COMING SOON - Bradford Sound Map - </title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <!-- MAIN CONTENT -->
+    <section class="top-bar">
+        <div class="wrap">
+            <div class="top-bar-left">
+                <h3>Bradford Sound Map</h3>
+            </div>
+            <div class="top-bar-right">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                      <a href="about.html">About</a>
+                       <ul class="menu vertical">
+                        <li><a href="about.html#part">Participants</a></li>
+                        <li><a href="about.html#loc">Locations</a></li>
+                        <li><a href="about.html#cat">Categories</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+        
+    <!-- CONTACT FORM -->
+    <section class="contact">
+        <div class ="wrap">
+            <form data-abide novalidate>
+                  <div class="row"><h3>Contact Form</h2></div>
+                  <div data-abide-error class="alert callout" style="display: none;">
+                    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <label>Name
+                        <input type="text" placeholder="Jane Smith" aria-describedby="exampleHelpText" required pattern="alpha_numeric">
+                        <span class="form-error">
+                          Yo, you had better fill this out, it's required.
+                        </span>
+                      </label>
+                    </div>
+                    <div class="small-12 columns">
+                      <label>Email
+                        <input type="email" id="email" placeholder="name@email.com" aria-describedby="exampleHelpText" required pattern="email">
+                        <span class="form-error">
+                          I'm required!
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <label>Subject
+                        <select id="select" required>
+                          <option value=""></option>
+                          <option value="particaption request">I want to participate</option>
+                          <option value="submission">I have a submission</option>
+                          <option value="feedback">I have some feedback</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <label>Message
+                        <textarea rows="5" cols="50" id="message" placeholder="Please give us some more details" aria-describedby="exampleHelpText" required ></textarea> 
+                        <span class="form-error">I'm required!</span>
+                      </label>
+                          <p class="help-text" id="exampleHelpText">Please enter some text here</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <fieldset class="large-6 columns">
+                      <button class="alert button" type="reset" value="Reset">Reset</button>
+                    </fieldset>
+                    <fieldset class="large-6 columns">
+                      <button class="success button" type="submit" value="Reset">Send</button>
+                    </fieldset>
+                  </div>
+                </form>
+            </div>
+    </section>    
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap"><h6>2017 &copy Bradford Sound Map</h5></div>
+    </footer>
+        
+    <!-- FOUNDATION REQUIRED SCRIPTS -->    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>COMING SOON - Bradford Sound Map</title>
+    
+    <style>
+        #map { position:relative; height: 750px; }-->
+    </style>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="https://use.typekit.net/euk4tqt.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  </head>
+  <body>
+    <section class="top-bar">
+            <div class="wrap">
+                <div class="top-bar-left">
+                    <h3>Bradford Sound Map</h3>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                          <a href="about.html">About</a>
+                           <ul class="menu vertical">
+                            <li><a href="about.html#part">Participants</a></li>
+                            <li><a href="about.html#loc">Locations</a></li>
+                            <li><a href="about.html#cat">Categories</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+     <!-- MAIN CONTENT -->
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+        <!-- FULL WIDTH MAP SECTION -->
+        <section id='map'></section>
+        <!-- WHAT IS SECTION -->
+        <section class="hero">
+            <div class="wrap">
+                <h1>What is The Bradford Sound Map?</h1>
+                <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam metus mauris,  mattis dictum blandit nec, dictum sit amet ex. Etiam eget suscipit enim. Fusce ornare lacus sed dui pellentesque maximus quis a libero. Cras dignissim dolor vel tempus varius. Duis porta efficitur augue, mollis volutpat urna molestie auctor. Mauris bibendum ipsum sed metus vehicula pharetra. Nulla placerat sapien ac viverra fringilla. Maecenas rhoncus orci non nisi pulvinar, sed lacinia augue finibus. Sed a ipsum at dui cursus congue.
+                    </p>
+                    <p>Praesent ac ultrices diam, eu tempor urna. Phasellus rhoncus leo quis egestas suscipit. Maecenas vel purus et arcu vulputate dignissim. Maecenas risus dui, ornare sit amet fringilla eget, viverra nec enim. Pellentesque ante augue, sagittis quis varius in, rhoncus ac lectus. Nunc eu lectus eleifend, dictum ex vel, facilisis nibh. Phasellus convallis enim malesuada, iaculis risus quis, vehicula ante. Morbi vulputate neque libero, elementum varius ex malesuada at. Phasellus viverra blandit ultrices. Duis laoreet est vitae elit pulvinar, et laoreet sapien porta. Curabitur fermentum orci massa, pretium tincidunt tortor fermentum eu. Maecenas ultrices ac magna eget vehicula.
+                    </p>
+                    <p>Sed finibus lacinia ex, in laoreet tortor consectetur ultricies. Morbi convallis pretium dui sed mattis. Aenean vel metus ante. Sed nisi velit, gravida vitae nunc nec, ultricies viverra nisi. Nullam urna nibh, pretium at luctus varius, pellentesque at sem. Aenean id turpis sagittis, finibus risus ut, pulvinar odio. Aliquam erat volutpat. Suspendisse iaculis lorem id elit eleifend, sed semper justo euismod. Mauris quis gravida libero. Suspendisse sed augue id lacus vehicula ultrices. Proin viverra hendrerit neque et laoreet. In turpis metus, volutpat dictum sodales vel, gravida consequat nisi.
+                    </p>
+            </div>
+        </section> 
+        <!-- Map script -->
+            <script>
+            // This will let you use the .remove() function later on
+              if (!('remove' in Element.prototype)) {
+                Element.prototype.remove = function() {
+                  if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                  }
+                };
+              }
+    
+            mapboxgl.accessToken = 'pk.eyJ1IjoibHVrYXMtaG9ybmJ5IiwiYSI6ImNqMjBqOHRsMDAwMnUzM242dWFpcGliMmcifQ.fxHuGlp_LxTl4K0ozSkXiw';
+            var map = new mapboxgl.Map({
+                container: 'map', // container id
+                center: [-1.7555017, 53.7924236], // starting position
+                style: 'mapbox://styles/lukas-hornby/cj2khw237001o2rnzjtk612vv', //hosted style id
+                zoom: 13 // starting zoom
+            });
+    
+    
+            function flyToStore(currentFeature) {
+              map.flyTo({
+                center: currentFeature.geometry.coordinates,
+                zoom: 15
+              });
+            }
+    
+            //Pop-up event listener and styling
+            function createPopUp(currentFeature) {
+              var popUps = document.getElementsByClassName('mapboxgl-popup');
+              // Check if there is already a popup on the map and if so, remove it
+              if (popUps[0]) popUps[0].remove();
+    
+              var popup = new mapboxgl.Popup({ closeOnClick: false })
+                .setLngLat(currentFeature.geometry.coordinates)
+                .setHTML('<h3>' +currentFeature.properties.Location +' - ' + currentFeature.properties.time +' - ' +currentFeature.properties.author +'</h3>' 
+                         //+'<h4><a href="' 
+                         //+ currentFeature.properties.audioLink + '" target=\'_blank\' ">Click to Play</a></h4>' 
+                         //+ '<iframe width="100%" height="20" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/320803595&amp;color=ff5500&amp;inverse=false&amp;auto_play=false&amp;show_user=true"></iframe>' 
+                         +'<p> <audio controls autoplay loop><source src="https://archive.org/download/AbdulAzizSurahFateha/MaulaYaSalliWaSallimFull.ogg" type="audio/ogg"><source src="https://archive.org/download/AbdulAzizSurahFateha/MaulaYaSalliWaSallimFull.mp3" type="audio/mp3">Sorry, your browser does not support this audio player</audio> </p>'
+                         +'<p>' + currentFeature.properties.desc +'</p>' + '<p>' +'<strong>Duration (mm:ss): </strong>' + currentFeature.properties.duration +'<strong>' ).addTo(map);
+            }
+    
+                // Add an event listener for when a user clicks on the map
+            map.on('click', function(e) {
+              // Query all the rendered points in the view
+              var features = map.queryRenderedFeatures(e.point, { layers: ['test'] });
+              if (features.length) {
+                var clickedPoint = features[0];
+                // 1. Fly to the point
+                flyToStore(clickedPoint);
+                // 2. Close all other popups and display popup for clicked store
+                createPopUp(clickedPoint);
+                // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+                var activeItem = document.getElementsByClassName('active');
+                if (activeItem[0]) {
+                  activeItem[0].classList.remove('active');
+                }
+                // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
+                var selectedFeature = clickedPoint.properties.address;
+    
+                for (var i = 0; i < stores.features.length; i++) {
+                  if (stores.features[i].properties.address === selectedFeature) {
+                    selectedFeatureIndex = i;
+                  }
+                }
+                // Select the correct list item using the found index and add the active class
+                var listing = document.getElementById('listing-' + selectedFeatureIndex);
+                listing.classList.add('active');
+              }
+            });
+    
+            // Add zoom and rotation controls to the map.
+            map.addControl(new mapboxgl.NavigationControl());    
+            </script>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+  <footer>
+      <div class="wrap"><small>2017 &copy Bradford Sound Map</small></div>
+  </footer>
+</html>
